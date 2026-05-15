@@ -632,6 +632,145 @@
     opacity: 1;
     transform: none;
   }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — TABLET (max 1024px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    nav { padding: 18px 32px; }
+    .nav-links { gap: 22px; }
+    section { padding: 90px 40px; }
+
+    .service-grid { grid-template-columns: 1fr; gap: 3px; }
+    .service-card { aspect-ratio: 16/7; }
+
+    .article-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+    .article-grid .article-card:first-child { grid-column: 1 / -1; }
+
+    #concept { grid-template-columns: 1fr; }
+    .concept-visual { min-height: 380px; }
+    .concept-text { padding: 70px 40px; }
+
+    #access { grid-template-columns: 1fr; gap: 50px; padding: 90px 40px; }
+
+    .faq-grid { grid-template-columns: 1fr; gap: 0; }
+
+    footer { padding: 50px 40px 32px; }
+    .footer-top { flex-direction: column; gap: 36px; }
+    .footer-links { flex-wrap: wrap; gap: 32px; }
+  }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — MOBILE (max 768px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* NAV */
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .nav-lang { font-size: 12px; }
+    .hero-accent-line { left: 20px; }
+
+    /* HERO */
+    .hero-content { padding: 0 20px 70px; }
+    .hero h1 { font-size: clamp(34px, 9vw, 52px); }
+    .hero p { font-size: 14px; }
+    .hero-scroll { display: none; }
+
+    /* SECTIONS */
+    section { padding: 72px 20px; }
+    .section-title { font-size: clamp(28px, 7vw, 40px); }
+
+    /* SERVICE */
+    .service-grid { grid-template-columns: 1fr; gap: 3px; }
+    .service-card { aspect-ratio: 4/3; padding: 28px 24px; }
+    .service-card h3 { font-size: 24px; }
+
+    /* ARTICLE */
+    .article-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .article-grid .article-card:first-child { grid-column: auto; }
+
+    /* CONCEPT */
+    #concept {
+      grid-template-columns: 1fr;
+      display: block;
+    }
+    .concept-visual { min-height: 280px; }
+    .concept-badge { left: 20px; bottom: 20px; font-size: 12px; padding: 14px 18px; max-width: 200px; }
+    .concept-text { padding: 52px 20px; }
+    .concept-stats { flex-direction: column; gap: 24px; }
+    .concept-stat span:first-child { font-size: 36px; }
+
+    /* FAQ */
+    #faq { padding: 72px 20px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-q { font-size: 16px; }
+
+    /* ACCESS */
+    #access {
+      grid-template-columns: 1fr;
+      display: block;
+      padding: 72px 20px;
+    }
+    .access-info { margin-bottom: 40px; }
+    .access-map { display: flex; flex-direction: column; gap: 16px; }
+    .access-map iframe { height: 200px !important; }
+
+    /* FOOTER */
+    footer { padding: 48px 20px 28px; }
+    .footer-top { flex-direction: column; gap: 28px; }
+    .footer-links { flex-direction: column; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+
+    /* BUTTONS */
+    .btn-primary { padding: 14px 28px; font-size: 11px; }
+  }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — SMALL MOBILE (max 480px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 32px; }
+    .service-card { aspect-ratio: 3/2; }
+    .concept-visual { min-height: 220px; }
+
+    /* ハンバーガーメニュー表示 */
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+  }
+
+
+  /* モバイルナビ展開 */
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex !important; }
+    .nav-links.nav-open {
+      display: flex !important;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(14,14,18,0.97);
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      z-index: 99;
+    }
+    .nav-links.nav-open a { font-size: 20px; letter-spacing: 0.12em; }
+  }
+
 </style>
 </head>
 <body>
@@ -647,6 +786,9 @@
     <li><a href="#access">Access</a></li>
   </ul>
   <div class="nav-lang">EN &nbsp;|&nbsp; <span>JP</span></div>
+  <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('nav-open')" style="display:none;">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- HERO -->
