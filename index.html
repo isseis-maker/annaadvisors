@@ -641,14 +641,14 @@
     .nav-links { gap: 22px; }
     section { padding: 90px 40px; }
 
-    .service-grid { grid-template-columns: 1fr; gap: 3px; }
-    .service-card { aspect-ratio: 16/7; }
+    .service-grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .service-card { aspect-ratio: 3/4; }
 
     .article-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
     .article-grid .article-card:first-child { grid-column: 1 / -1; }
 
-    #concept { grid-template-columns: 1fr; }
-    .concept-visual { min-height: 380px; }
+    #concept { grid-template-columns: 1fr 1fr; }
+    .concept-visual { min-height: 420px; }
     .concept-text { padding: 70px 40px; }
 
     #access { grid-template-columns: 1fr; gap: 50px; padding: 90px 40px; }
@@ -682,9 +682,9 @@
     .section-title { font-size: clamp(28px, 7vw, 40px); }
 
     /* SERVICE */
-    .service-grid { grid-template-columns: 1fr; gap: 3px; }
-    .service-card { aspect-ratio: 4/3; padding: 28px 24px; }
-    .service-card h3 { font-size: 24px; }
+    .service-grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .service-card { aspect-ratio: 3/4; padding: 22px 18px; }
+    .service-card h3 { font-size: 20px; }
 
     /* ARTICLE */
     .article-grid {
@@ -695,10 +695,10 @@
 
     /* CONCEPT */
     #concept {
-      grid-template-columns: 1fr;
-      display: block;
+      grid-template-columns: 1fr 1fr;
+      display: grid;
     }
-    .concept-visual { min-height: 280px; }
+    .concept-visual { min-height: 320px; }
     .concept-badge { left: 20px; bottom: 20px; font-size: 12px; padding: 14px 18px; max-width: 200px; }
     .concept-text { padding: 52px 20px; }
     .concept-stats { flex-direction: column; gap: 24px; }
@@ -817,7 +817,7 @@
   </div>
 
   <div class="service-grid reveal">
-    <a href="#" class="service-card">
+    <a href="https://asset-ocean.com/oversea_rentals/?post_area=213&price_up&price_down&construction_year_up&construction_year_down&post_kind=69,369&post_floor_plan" target="_blank" rel="noopener" class="service-card">
       <div class="service-card-img" style="background-image: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80');"></div>
       <div class="service-card-overlay"></div>
       <div class="service-card-num">01</div>
@@ -835,13 +835,13 @@
       <div class="service-card-num">02</div>
       <div class="service-card-body">
         <div class="service-card-icon"></div>
-        <h3>Pre-build<br>Property</h3>
-        <p>Invest early in Cambodia's most promising developments — securing the best units at pre-launch prices with expert guidance.</p>
+        <h3>Investment<br>Property</h3>
+        <p>Discover high-yield investment properties in Phnom Penh's prime districts — from condominiums to mixed-use assets with strong returns.</p>
         <div class="service-card-link">View projects →</div>
       </div>
     </a>
 
-    <a href="#" class="service-card">
+    <a href="https://asset-ocean.com/oversea_estates/?post_area=213&price_up&price_down&yield_up&construction_year_up&construction_year_down&post_kind=71" target="_blank" rel="noopener" class="service-card">
       <div class="service-card-img" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80');"></div>
       <div class="service-card-overlay"></div>
       <div class="service-card-num">03</div>
@@ -863,38 +863,38 @@
   </div>
 
   <div class="article-grid reveal">
-    <a href="#" class="article-card">
+    <a href="#" onclick="openArticle('article-1'); return false;" class="article-card">
       <div class="article-thumb">
-        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=900&q=80" alt="Phnom Penh cityscape">
+        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=900&q=80" alt="Phnom Penh cityscape at sunset">
       </div>
       <div class="article-body">
         <div class="article-cat">City Guide</div>
-        <h4>Why Phnom Penh Is Emerging Asia's Most Exciting City in 2025</h4>
-        <p>From BKK1 to Tonle Bassac, discover the neighborhoods shaping the capital's transformation into a world-class destination.</p>
+        <h4>Why Phnom Penh Is One of Asia's Most Exciting Cities Right Now</h4>
+        <p>From the vibrant BKK1 district to the riverside promenade, Phnom Penh is transforming at a remarkable pace. Discover what makes Cambodia's capital the destination of choice for investors and expatriates alike.</p>
         <div class="article-date">May 2025</div>
       </div>
     </a>
 
-    <a href="#" class="article-card">
+    <a href="#" onclick="openArticle('article-2'); return false;" class="article-card">
       <div class="article-thumb">
-        <img src="https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&q=80" alt="Modern interior">
+        <img src="https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&q=80" alt="Modern luxury interior Phnom Penh">
       </div>
       <div class="article-body">
         <div class="article-cat">Market Report</div>
-        <h4>Cambodia Real Estate: Q1 2025 Market Outlook</h4>
-        <p>Key trends, rental yields, and opportunities for foreign investors in the current landscape.</p>
+        <h4>Cambodia Real Estate Market: 2025 Outlook for Foreign Investors</h4>
+        <p>Rental yields of 6–9%, a dollarized economy, and relaxed foreign ownership rules make Cambodia one of the most accessible real estate markets in Asia. Here is what the numbers look like heading into 2025.</p>
         <div class="article-date">April 2025</div>
       </div>
     </a>
 
-    <a href="#" class="article-card">
+    <a href="#" onclick="openArticle('article-3'); return false;" class="article-card">
       <div class="article-thumb">
-        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80" alt="Luxury apartment">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80" alt="Luxury apartment living Phnom Penh">
       </div>
       <div class="article-body">
-        <div class="article-cat">Column</div>
+        <div class="article-cat">Living Guide</div>
         <h4>Living in Phnom Penh: A Complete Guide for Newcomers</h4>
-        <p>Everything you need to know about daily life, from the best restaurants to practical tips on setting up your home.</p>
+        <p>Thinking of relocating to Cambodia's capital? From finding the right neighborhood to navigating daily life, this guide covers everything a newcomer needs to settle in with confidence.</p>
         <div class="article-date">March 2025</div>
       </div>
     </a>
@@ -1043,6 +1043,52 @@
   </div>
 </section>
 
+
+<!-- ARTICLE PAGE: article-1 -->
+<section id="article-1" class="article-page" style="display:none; background:var(--white); padding:120px 60px;">
+  <div style="max-width:800px; margin:0 auto;">
+    <a href="#" onclick="closeArticle('article-1'); return false;" style="display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);text-decoration:none;margin-bottom:48px;font-family:var(--sans);">← Back to Top</a>
+    <div class="section-label">City Guide</div>
+    <h2 class="section-title" style="margin-bottom:24px;">Why Phnom Penh Is One of Asia's Most Exciting Cities Right Now</h2>
+    <p style="font-size:13px;color:var(--gray);margin-bottom:40px;letter-spacing:0.08em;">May 2025</p>
+    <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=900&q=80" alt="Phnom Penh cityscape at sunset" style="width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:48px;">
+    <p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Phnom Penh has undergone a dramatic transformation over the past decade, evolving from a post-conflict capital into one of Southeast Asia's most dynamic cities. Today, gleaming high-rises line the Tonle Sap riverfront, world-class restaurants fill the streets of BKK1, and a growing community of international professionals calls this city home.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">The city's appeal lies in its unique blend of Khmer heritage and modern ambition. The Royal Palace and the National Museum stand as timeless landmarks, while new mixed-use developments redefine the skyline. For those seeking a high quality of life at a fraction of the cost of Singapore or Bangkok, Phnom Penh offers an exceptional proposition.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Infrastructure investment is accelerating. New expressways connect the city to the airport and to Sihanoukville, while the Ring Road project promises to ease congestion across the metropolitan area. Foreign direct investment continues to flow in, with Japan, China, and South Korea leading the charge.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">For investors and residents alike, now is the moment to engage with Phnom Penh — before the rest of the world catches on.</p>
+    <div style="margin-top:60px;padding-top:40px;border-top:1px solid rgba(0,0,0,0.08);">
+      <a href="mailto:info@annaadvisors.com" class="btn-primary">Enquire about this topic</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE PAGE: article-2 -->
+<section id="article-2" class="article-page" style="display:none; background:var(--white); padding:120px 60px;">
+  <div style="max-width:800px; margin:0 auto;">
+    <a href="#" onclick="closeArticle('article-2'); return false;" style="display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);text-decoration:none;margin-bottom:48px;font-family:var(--sans);">← Back to Top</a>
+    <div class="section-label">Market Report</div>
+    <h2 class="section-title" style="margin-bottom:24px;">Cambodia Real Estate Market: 2025 Outlook for Foreign Investors</h2>
+    <p style="font-size:13px;color:var(--gray);margin-bottom:40px;letter-spacing:0.08em;">April 2025</p>
+    <img src="https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&q=80" alt="Modern luxury interior Phnom Penh" style="width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:48px;">
+    <p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Cambodia's real estate market continues to offer some of the most compelling fundamentals in Southeast Asia. For foreign investors, the combination of high rental yields, a USD-denominated economy, and relatively transparent ownership structures presents a rare opportunity.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Key figures for 2025: Prime condominiums in BKK1 and Daun Penh are achieving gross rental yields of 6–9% per annum, outperforming comparable assets in Bangkok (4–5%) and Kuala Lumpur (3–5%). Entry prices for quality studio units start from USD 80,000, with larger two-bedroom units in premium developments ranging from USD 180,000 to USD 350,000.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">The pre-build segment remains particularly attractive. Developers are offering flexible payment plans — typically 20% down with installments spread over the construction period — allowing investors to control assets worth significantly more than their initial outlay.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">On the regulatory front, Cambodia permits foreign nationals to own strata-title units (from the first floor upward) outright, with ownership registered under the buyer's name. This clarity has been a key driver of international demand, particularly from Japanese, Korean, and Chinese buyers.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Looking ahead, the completion of several landmark projects in 2025 and 2026 is expected to attract a new wave of corporate tenants and high-net-worth residents, further supporting rental demand across the city.</p>
+    <div style="margin-top:60px;padding-top:40px;border-top:1px solid rgba(0,0,0,0.08);">
+      <a href="mailto:info@annaadvisors.com" class="btn-primary">Enquire about this topic</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE PAGE: article-3 -->
+<section id="article-3" class="article-page" style="display:none; background:var(--white); padding:120px 60px;">
+  <div style="max-width:800px; margin:0 auto;">
+    <a href="#" onclick="closeArticle('article-3'); return false;" style="display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);text-decoration:none;margin-bottom:48px;font-family:var(--sans);">← Back to Top</a>
+    <div class="section-label">Living Guide</div>
+    <h2 class="section-title" style="margin-bottom:24px;">Living in Phnom Penh: A Complete Guide for Newcomers</h2>
+    <p style="font-size:13px;color:var(--gray);margin-bottom:40px;letter-spacing:0.08em;">March 2025</p>
+    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80" alt="Luxury apartment living Phnom Penh" style="width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:48px;">
+    <p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Relocating to Phnom Penh is an adventure that rewards those who arrive prepared. The city is more cosmopolitan than many first-time visitors expect — international schools, private hospitals, Japanese supermarkets, and rooftop bars are all within easy reach of the city's most sought-after residential districts.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Choosing your neighborhood is the most important first decision. BKK1 (Boeung Keng Kang 1) remains the preferred address for expatriates and affluent Cambodians, offering a dense concentration of cafés, restaurants, embassies, and high-end condominiums. Daun Penh, home to the Royal Palace and the Central Market, offers a more historical atmosphere with excellent river access. For families, the Toul Tom Poung and Toul Kork districts offer quieter streets and proximity to international schools.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">The cost of living is a major draw. A high-quality two-bedroom serviced apartment in BKK1 can be rented for USD 800–1,500 per month. Dining out is affordable even at top-tier restaurants, and household utilities are inexpensive by regional standards.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">Healthcare has improved markedly in recent years. Royal Phnom Penh Hospital and Sunrise Japan Hospital provide international-standard care, with many doctors trained overseas. A medical evacuation insurance policy is still advisable for serious conditions.</p><p style="font-size:16px;line-height:1.9;color:#2a2a2a;margin-bottom:24px;font-weight:300;">For those considering a longer-term stay, the Cambodia My Second Home (CMSH) visa offers a pathway to extended residency with minimal bureaucracy. Anna Advisors can connect you with trusted legal and relocation specialists to make your transition as smooth as possible.</p>
+    <div style="margin-top:60px;padding-top:40px;border-top:1px solid rgba(0,0,0,0.08);">
+      <a href="mailto:info@annaadvisors.com" class="btn-primary">Enquire about this topic</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -1108,5 +1154,26 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+<script>
+  function openArticle(id) {
+    // hide main content
+    document.querySelectorAll('nav, .hero, #service, #article, #concept, #faq, #access, footer').forEach(el => {
+      el.style.display = 'none';
+    });
+    // show article page
+    var page = document.getElementById(id);
+    if (page) { page.style.display = 'block'; window.scrollTo(0,0); }
+  }
+  function closeArticle(id) {
+    document.getElementById(id).style.display = 'none';
+    document.querySelectorAll('nav, .hero, #service, #article, #concept, #faq, #access, footer').forEach(el => {
+      el.style.display = '';
+    });
+    // scroll to article section
+    document.getElementById('article').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
 </body>
 </html>
