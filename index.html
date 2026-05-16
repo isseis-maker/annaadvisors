@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anna Advisors | Real Estate in Phnom Penh</title>
+<title>Anna Advisors | Real Estate Investment in Cambodia — Phnom Penh</title>
+<meta name="description" content="Anna Advisors — Real estate investment, sales and leasing in Phnom Penh, Cambodia. Bilingual experts with offices in Tokyo and Phnom Penh.">
+<meta name="keywords" content="Cambodia real estate, Phnom Penh property, investment property Cambodia, room for rent Phnom Penh, office for rent Cambodia, Anna Advisors">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Anna Advisors Co., Ltd.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://isseis-maker.github.io/annaadvisors/">
+<meta property="og:title" content="Anna Advisors | Real Estate Investment in Cambodia">
+<meta property="og:description" content="With offices in Tokyo and Phnom Penh, Anna Advisors specializes in real estate investment, sales, and leasing in Cambodia.">
+<meta property="og:image" content="https://isseis-maker.github.io/annaadvisors/og-image.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="km_KH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anna Advisors | Real Estate Investment in Cambodia">
+<meta name="twitter:description" content="Premium real estate investment, sales and leasing in Phnom Penh. Bilingual experts in Tokyo & Phnom Penh.">
+<meta name="twitter:image" content="https://isseis-maker.github.io/annaadvisors/og-image.jpg">
+<link rel="canonical" href="https://isseis-maker.github.io/annaadvisors/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -773,6 +792,18 @@
     .nav-links.nav-open a { font-size: 20px; letter-spacing: 0.12em; }
   }
 
+
+  .lang-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: 12px; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.5);
+    font-family: var(--sans);
+    padding: 2px 4px;
+    transition: color 0.2s;
+  }
+  .lang-btn:hover { color: var(--white); }
+  .lang-btn.active-lang { color: var(--red); font-weight: 500; }
+
 </style>
 </head>
 <body>
@@ -787,7 +818,13 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#access">Access</a></li>
   </ul>
-  <div class="nav-lang">EN &nbsp;|&nbsp; <span>JP</span></div>
+  <div class="nav-lang" style="display:flex;align-items:center;gap:6px;">
+    <button class="lang-btn active-lang" data-lang="en" onclick="setLang('en')">EN</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">JP</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="km" onclick="setLang('km')">ខ្មែរ</button>
+  </div>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('nav-open')" style="display:none;">
     <span></span><span></span><span></span>
   </div>
@@ -799,10 +836,10 @@
   <div class="hero-accent-line"></div>
 
   <div class="hero-content">
-    <div class="hero-tag">Real Estate Investment in Cambodia</div>
-    <h1>Leave it to<br><em>Anna Advisors.</em></h1>
-    <p>With offices in Tokyo and Phnom Penh, we specialize in real estate investment, sales, leasing — guiding you every step of the way.</p>
-    <a href="#access" class="btn-primary">Feel free to contact us</a>
+    <div class="hero-tag" id="hero-tag">Real Estate Investment in Cambodia</div>
+    <h1 id="hero-h1">Leave it to<br><em>Anna Advisors.</em></h1>
+    <p id="hero-p">With offices in Tokyo and Phnom Penh, we specialize in real estate investment, sales, leasing — guiding you every step of the way.</p>
+    <a href="#access" class="btn-primary"><span id="hero-btn">Feel free to contact us</span> to contact us</a>
   </div>
 
   <div class="hero-scroll">
@@ -814,8 +851,8 @@
 <!-- SERVICE -->
 <section id="service">
   <div class="reveal">
-    <div class="section-label">Our Services</div>
-    <h2 class="section-title">What We <em>Offer</em></h2>
+    <div class="section-label" id="service-label">Our Services</div>
+    <h2 class="section-title" id="service-title">What We <em>Offer</em></h2>
   </div>
 
   <div class="service-grid reveal">
@@ -825,9 +862,9 @@
       <div class="service-card-num">01</div>
       <div class="service-card-body">
         <div class="service-card-icon"></div>
-        <h3>Room<br>for Rent</h3>
-        <p>Premium furnished apartments and condominiums in the heart of Phnom Penh, tailored for expatriates and affluent residents.</p>
-        <div class="service-card-link">Explore listings →</div>
+        <h3 id="svc-h-0">Room<br>for Rent</h3>
+        <p id="svc-p-0">Premium furnished apartments and condominiums in the heart of Phnom Penh, tailored for expatriates and affluent residents.</p>
+        <div class="service-card-link" id="svc-link-0">Explore listings →</div>
       </div>
     </a>
 
@@ -837,9 +874,9 @@
       <div class="service-card-num">02</div>
       <div class="service-card-body">
         <div class="service-card-icon"></div>
-        <h3>Investment<br>Property</h3>
-        <p>Discover high-yield investment properties in Phnom Penh's prime districts — from condominiums to mixed-use assets with strong returns.</p>
-        <div class="service-card-link">View projects →</div>
+        <h3 id="svc-h-1">Investment<br>Property</h3>
+        <p id="svc-p-1">Discover high-yield investment properties in Phnom Penh's prime districts — from condominiums to mixed-use assets with strong returns.</p>
+        <div class="service-card-link" id="svc-link-1">View projects →</div>
       </div>
     </a>
 
@@ -849,9 +886,9 @@
       <div class="service-card-num">03</div>
       <div class="service-card-body">
         <div class="service-card-icon"></div>
-        <h3>Office<br>for Rent</h3>
-        <p>Sophisticated commercial spaces from boutique private offices to full-floor corporate suites in Phnom Penh's key business districts.</p>
-        <div class="service-card-link">Find your space →</div>
+        <h3 id="svc-h-2">Office<br>for Rent</h3>
+        <p id="svc-p-2">Sophisticated commercial spaces from boutique private offices to full-floor corporate suites in Phnom Penh's key business districts.</p>
+        <div class="service-card-link" id="svc-link-2">Find your space →</div>
       </div>
     </a>
   </div>
@@ -903,7 +940,7 @@
   </div>
 
   <div class="article-more reveal">
-    <a href="#" class="btn-outline">View all articles</a>
+    <a href="#" class="btn-outline" id="article-btn">View all articles</a>
   </div>
 </section>
 
@@ -917,25 +954,102 @@
 
   <div class="concept-text">
     <div class="reveal">
-      <div class="section-label">Our Philosophy</div>
-      <h2 class="section-title">Invest in Cambodia —<br><em>A Fast-Growing Market</em></h2>
-      <p>At Anna Advisors, we connect investors and residents with Cambodia's most refined real estate opportunities. We believe property is more than an investment — it is where lifestyle, comfort, and long-term value converge.</p>
-      <p style="margin-top: 18px;">From premium residences to high-return assets, our bilingual experts provide transparent, end-to-end support, helping you invest and live with confidence in the heart of Phnom Penh.</p>
+      <div class="section-label" id="concept-label">Our Philosophy</div>
+      <h2 class="section-title" id="concept-title">Invest in Cambodia —<br><em>A Fast-Growing Market</em></h2>
+      <p id="concept-p1">At Anna Advisors, we connect investors and residents with Cambodia's most refined real estate opportunities. We believe property is more than an investment — it is where lifestyle, comfort, and long-term value converge.</p>
+      <p id="concept-p2" style="margin-top: 18px;">From premium residences to high-return assets, our bilingual experts provide transparent, end-to-end support, helping you invest and live with confidence in the heart of Phnom Penh.</p>
       <div class="concept-divider"></div>
       <div class="concept-stats">
         <div class="concept-stat">
-          <span>2</span>
-          <span>Offices: Tokyo & Phnom Penh</span>
+          <span id="stat1-num">2</span>
+          <span id="stat1-lbl">Offices: Tokyo & Phnom Penh</span>
         </div>
         <div class="concept-stat">
-          <span>100+</span>
-          <span>Properties in Portfolio</span>
+          <span id="stat2-num">100+</span>
+          <span id="stat2-lbl">Properties in Portfolio</span>
         </div>
         <div class="concept-stat">
-          <span>10+</span>
-          <span>Years of Experience</span>
+          <span id="stat3-num">10+</span>
+          <span id="stat3-lbl">Years of Experience</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- VOICES -->
+<section id="voices" style="background:var(--dark); padding:120px 60px;">
+  <div class="reveal">
+    <div class="section-label" id="voices-label" style="color:var(--red);">Client Voices</div>
+    <h2 class="section-title" id="voices-title" style="color:var(--white);">What Our <em>Clients Say</em></h2>
+  </div>
+
+  <div class="reveal" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px;">
+
+    <!-- Voice 1 -->
+    <div style="background:#16161e; padding:40px 36px; position:relative; border-top:2px solid var(--red);">
+      <div style="font-family:var(--serif); font-size:64px; line-height:0.7; color:var(--red); opacity:0.4; margin-bottom:24px;">"</div>
+      <p style="font-size:15px; line-height:1.85; color:rgba(255,255,255,0.75); font-weight:300; margin-bottom:32px; font-family:var(--serif); font-style:italic;">
+        I was initially hesitant about investing overseas, but Anna Advisors made the entire process remarkably transparent. They accompanied me on property tours, explained every document clearly, and I secured a high-yield condo in BKK1 within two weeks. I couldn't be happier with the result.
+      </p>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#fa052e,#87869a); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:18px; color:var(--white); font-weight:400; flex-shrink:0;">T.S</div>
+        <div>
+          <div style="font-family:var(--serif); font-size:16px; color:var(--white);">T. Suzuki</div>
+          <div style="font-size:11px; color:var(--gray); letter-spacing:0.1em; text-transform:uppercase; margin-top:3px;">Investor · Tokyo, Japan</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Voice 2 -->
+    <div style="background:#16161e; padding:40px 36px; position:relative; border-top:2px solid var(--red);">
+      <div style="font-family:var(--serif); font-size:64px; line-height:0.7; color:var(--red); opacity:0.4; margin-bottom:24px;">"</div>
+      <p style="font-size:15px; line-height:1.85; color:rgba(255,255,255,0.75); font-weight:300; margin-bottom:32px; font-family:var(--serif); font-style:italic;">
+        As a Korean investor unfamiliar with Cambodian regulations, I was worried about the legal complexities of foreign ownership. Anna's team handled everything professionally — from due diligence to final registration. The rental income has exceeded my expectations by 20%.
+      </p>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#fa052e,#87869a); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:18px; color:var(--white); font-weight:400; flex-shrink:0;">J.K</div>
+        <div>
+          <div style="font-family:var(--serif); font-size:16px; color:var(--white);">J. Kim</div>
+          <div style="font-size:11px; color:var(--gray); letter-spacing:0.1em; text-transform:uppercase; margin-top:3px;">Pre-build Buyer · Seoul, Korea</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Voice 3 -->
+    <div style="background:#16161e; padding:40px 36px; position:relative; border-top:2px solid var(--red);">
+      <div style="font-family:var(--serif); font-size:64px; line-height:0.7; color:var(--red); opacity:0.4; margin-bottom:24px;">"</div>
+      <p style="font-size:15px; line-height:1.85; color:rgba(255,255,255,0.75); font-weight:300; margin-bottom:32px; font-family:var(--serif); font-style:italic;">
+        We relocated our regional office to Phnom Penh and needed a premium space quickly. Anna Advisors found us the perfect floor in Daun Penh within days. Their local knowledge is unmatched — they even assisted with setting up utilities and local vendor contacts.
+      </p>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#fa052e,#87869a); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:18px; color:var(--white); font-weight:400; flex-shrink:0;">M.W</div>
+        <div>
+          <div style="font-family:var(--serif); font-size:16px; color:var(--white);">M. Wilson</div>
+          <div style="font-size:11px; color:var(--gray); letter-spacing:0.1em; text-transform:uppercase; margin-top:3px;">Corporate Tenant · Singapore</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Star rating row -->
+  <div class="reveal" style="display:flex; justify-content:center; align-items:center; gap:48px; margin-top:72px; flex-wrap:wrap;">
+    <div style="text-align:center;">
+      <div style="font-family:var(--serif); font-size:48px; font-weight:300; color:var(--white); line-height:1;">5.0</div>
+      <div style="color:var(--red); font-size:18px; letter-spacing:4px; margin:6px 0;">★★★★★</div>
+      <div style="font-size:11px; color:var(--gray); letter-spacing:0.12em; text-transform:uppercase;">Google Reviews</div>
+    </div>
+    <div style="width:1px; height:60px; background:rgba(255,255,255,0.1);"></div>
+    <div style="text-align:center;">
+      <div style="font-family:var(--serif); font-size:48px; font-weight:300; color:var(--white); line-height:1;">98%</div>
+      <div style="font-size:11px; color:var(--gray); letter-spacing:0.12em; text-transform:uppercase; margin-top:10px;">Client Satisfaction Rate</div>
+    </div>
+    <div style="width:1px; height:60px; background:rgba(255,255,255,0.1);"></div>
+    <div style="text-align:center;">
+      <div style="font-family:var(--serif); font-size:48px; font-weight:300; color:var(--white); line-height:1;">300+</div>
+      <div style="font-size:11px; color:var(--gray); letter-spacing:0.12em; text-transform:uppercase; margin-top:10px;">Transactions Completed</div>
     </div>
   </div>
 </section>
@@ -984,8 +1098,8 @@
 <section id="access">
   <div>
     <div class="reveal">
-      <div class="section-label">Contact & Access</div>
-      <h2 class="section-title">Visit <em>Our Offices</em></h2>
+      <div class="section-label" id="access-label">Contact & Access</div>
+      <h2 class="section-title" id="access-title">Visit <em>Our Offices</em></h2>
     </div>
 
     <div class="access-info reveal">
@@ -1023,7 +1137,7 @@
         </p>
       </div>
 
-      <a href="mailto:info@annaadvisors.com" class="btn-primary" style="margin-top: 8px;">Send us an enquiry</a>
+      <a href="mailto:info@annaadvisors.com" class="btn-primary" id="access-btn" style="margin-top: 8px;">Send us an enquiry</a>
     </div>
   </div>
 
@@ -1057,7 +1171,13 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#access">Access</a></li>
   </ul>
-  <div class="nav-lang">EN &nbsp;|&nbsp; <span>JP</span></div>
+  <div class="nav-lang" style="display:flex;align-items:center;gap:6px;">
+    <button class="lang-btn active-lang" data-lang="en" onclick="setLang('en')">EN</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">JP</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="km" onclick="setLang('km')">ខ្មែរ</button>
+  </div>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('nav-open')" style="display:none;">
     <span></span><span></span><span></span>
   </div>
@@ -1087,7 +1207,13 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#access">Access</a></li>
   </ul>
-  <div class="nav-lang">EN &nbsp;|&nbsp; <span>JP</span></div>
+  <div class="nav-lang" style="display:flex;align-items:center;gap:6px;">
+    <button class="lang-btn active-lang" data-lang="en" onclick="setLang('en')">EN</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">JP</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="km" onclick="setLang('km')">ខ្មែរ</button>
+  </div>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('nav-open')" style="display:none;">
     <span></span><span></span><span></span>
   </div>
@@ -1117,7 +1243,13 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#access">Access</a></li>
   </ul>
-  <div class="nav-lang">EN &nbsp;|&nbsp; <span>JP</span></div>
+  <div class="nav-lang" style="display:flex;align-items:center;gap:6px;">
+    <button class="lang-btn active-lang" data-lang="en" onclick="setLang('en')">EN</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">JP</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="km" onclick="setLang('km')">ខ្មែរ</button>
+  </div>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('nav-open')" style="display:none;">
     <span></span><span></span><span></span>
   </div>
@@ -1149,7 +1281,13 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#access">Access</a></li>
   </ul>
-  <div class="nav-lang">EN &nbsp;|&nbsp; <span>JP</span></div>
+  <div class="nav-lang" style="display:flex;align-items:center;gap:6px;">
+    <button class="lang-btn active-lang" data-lang="en" onclick="setLang('en')">EN</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">JP</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="km" onclick="setLang('km')">ខ្មែរ</button>
+  </div>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('nav-open')" style="display:none;">
     <span></span><span></span><span></span>
   </div>
@@ -1205,10 +1343,10 @@
   <div class="footer-top">
     <div>
       <div class="footer-logo">Anna <span>Advisors</span></div>
-      <div class="footer-tagline">Real Estate Investment · Sales · Leasing</div>
+      <div class="footer-tagline" id="footer-tagline">Real Estate Investment · Sales · Leasing</div>
     </div>
     <div class="footer-links">
-      <div class="footer-col">
+      <div class="footer-col" id="footer-col-0">
         <h5>Services</h5>
         <ul>
           <li><a href="#">Room for Rent</a></li>
@@ -1216,7 +1354,7 @@
           <li><a href="#">Office for Rent</a></li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="footer-col" id="footer-col-1">
         <h5>Company</h5>
         <ul>
           <li><a href="#">About Us</a></li>
@@ -1225,7 +1363,7 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="footer-col" id="footer-col-2">
         <h5>Legal</h5>
         <ul>
           <li><a href="#">Privacy Policy</a></li>
@@ -1267,7 +1405,7 @@
 </script>
 
 <script>
-  var MAIN_SELECTORS = 'nav, .hero, #service, #article, #concept, #faq, #access, footer';
+  var MAIN_SELECTORS = 'nav, .hero, #service, #article, #concept, #voices, #faq, #access, footer';
 
   function openArticle(id) {
     document.querySelectorAll(MAIN_SELECTORS).forEach(el => el.style.display = 'none');
@@ -1305,7 +1443,13 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#access">Access</a></li>
   </ul>
-  <div class="nav-lang">EN &nbsp;|&nbsp; <span>JP</span></div>
+  <div class="nav-lang" style="display:flex;align-items:center;gap:6px;">
+    <button class="lang-btn active-lang" data-lang="en" onclick="setLang('en')">EN</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">JP</button>
+    <span style="color:rgba(255,255,255,0.3);">|</span>
+    <button class="lang-btn" data-lang="km" onclick="setLang('km')">ខ្មែរ</button>
+  </div>
   <div class="nav-hamburger" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('nav-open')" style="display:none;">
     <span></span><span></span><span></span>
   </div>
@@ -1423,7 +1567,7 @@
 </script>
 
 <script>
-  var MAIN_SELECTORS = 'nav, .hero, #service, #article, #concept, #faq, #access, footer';
+  var MAIN_SELECTORS = 'nav, .hero, #service, #article, #concept, #voices, #faq, #access, footer';
 
   function openArticle(id) {
     document.querySelectorAll(MAIN_SELECTORS).forEach(el => el.style.display = 'none');
@@ -1460,7 +1604,7 @@
         <h5>Services</h5>
         <ul>
           <li><a href="https://asset-ocean.com/oversea_rentals/?post_area=213&price_up&price_down&construction_year_up&construction_year_down&post_kind=69,369&post_floor_plan" target="_blank" rel="noopener">Room for Rent</a></li>
-          <li><a href="https://asset-ocean.com/oversea_estates/?post_area=213&price_up&price_down&yield_up&construction_year_up&construction_year_down" target="_blank" rel="noopener">Investment Property</a></li>
+          <li><a href="https://asset-ocean.com/oversea_estates/?post_area=213&price_up&price_down&yield_up&construction_year_up&construction_year_down&post_kind=69" target="_blank" rel="noopener">Investment Property</a></li>
           <li><a href="https://asset-ocean.com/oversea_estates/?post_area=213&price_up&price_down&yield_up&construction_year_up&construction_year_down&post_kind=71" target="_blank" rel="noopener">Office for Rent</a></li>
         </ul>
       </div>
@@ -1515,7 +1659,7 @@
 </script>
 
 <script>
-  var MAIN_SELECTORS = 'nav, .hero, #service, #article, #concept, #faq, #access, footer';
+  var MAIN_SELECTORS = 'nav, .hero, #service, #article, #concept, #voices, #faq, #access, footer';
 
   function openArticle(id) {
     document.querySelectorAll(MAIN_SELECTORS).forEach(el => el.style.display = 'none');
@@ -1537,6 +1681,116 @@
     document.querySelectorAll(MAIN_SELECTORS).forEach(el => el.style.display = '');
     window.scrollTo(0,0);
   }
+</script>
+
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// MULTILINGUAL SYSTEM — EN / JA / KM
+// ═══════════════════════════════════════════════════════════
+const LANG_DATA = {
+  en: {
+    nav: ['Services', 'Articles', 'CEO Message', 'FAQ', 'Access'],
+    hero_tag: 'Real Estate Investment in Cambodia',
+    hero_h1: 'Leave it to<br><em>Anna Advisors.</em>',
+    hero_p: 'With offices in Tokyo and Phnom Penh, we specialize in real estate investment, sales, leasing — guiding you every step of the way.',
+    hero_btn: 'Feel free to contact us',
+    service_label: 'Our Services', service_title: 'What We <em>Offer</em>',
+    services: [
+      { num:'01', h:'Room<br>for Rent', p:"Premium furnished apartments and condominiums in the heart of Phnom Penh, tailored for expatriates and affluent residents.", link:'Explore listings →' },
+      { num:'02', h:'Investment<br>Property', p:"Discover high-yield investment properties in Phnom Penh's prime districts — from condominiums to mixed-use assets with strong returns.", link:'View projects →' },
+      { num:'03', h:'Office<br>for Rent', p:"Sophisticated commercial spaces from boutique private offices to full-floor corporate suites in Phnom Penh's key business districts.", link:'Find your space →' }
+    ],
+    article_label: 'Articles', article_title: 'Phnom Penh <em>Insights</em>', article_btn: 'View all articles',
+    concept_label: 'Our Philosophy', concept_title: 'Invest in Cambodia —<br><em>A Fast-Growing Market</em>',
+    concept_p1: "At Anna Advisors, we connect investors and residents with Cambodia's most refined real estate opportunities. We believe property is more than an investment — it is where lifestyle, comfort, and long-term value converge.",
+    concept_p2: 'From premium residences to high-return assets, our bilingual experts provide transparent, end-to-end support, helping you invest and live with confidence in the heart of Phnom Penh.',
+    stat1: ['2','Offices: Tokyo & Phnom Penh'], stat2: ['100+','Properties in Portfolio'], stat3: ['10+','Years of Experience'],
+    voices_label: 'Client Voices', voices_title: 'What Our <em>Clients Say</em>',
+    faq_label: 'FAQ', faq_title: 'Frequently Asked <em>Questions</em>',
+    access_label: 'Contact & Access', access_title: 'Visit <em>Our Offices</em>', access_btn: 'Send us an enquiry',
+    footer_tagline: 'Real Estate Investment · Sales · Leasing',
+    footer_cols: ['Services','Company','Legal'],
+    footer_links: [['Room for Rent','Investment Property','Office for Rent'],['CEO Message','Articles','FAQ','Contact'],['Privacy Policy','Terms of Use']],
+  },
+  ja: {
+    nav: ['サービス', '記事', 'CEOメッセージ', 'よくある質問', 'アクセス'],
+    hero_tag: 'カンボジア不動産投資',
+    hero_h1: 'お任せください、<br><em>アンナアドバイザーズ。</em>',
+    hero_p: '東京・プノンペンに拠点を持ち、不動産投資・売買・賃貸を専門にサポートいたします。',
+    hero_btn: 'お気軽にお問い合わせください',
+    service_label: 'サービス', service_title: '私たちの<em>サービス</em>',
+    services: [
+      { num:'01', h:'賃貸<br>物件', p:'プノンペン中心部の高級家具付きアパート・コンドミニアム。駐在員・富裕層のお客様に最適な物件をご紹介します。', link:'物件を探す →' },
+      { num:'02', h:'投資<br>物件', p:'プノンペンの主要エリアで高利回りの投資物件をご紹介。コンドミニアムから複合施設まで、安定した収益を実現します。', link:'物件を見る →' },
+      { num:'03', h:'オフィス<br>賃貸', p:'ブティックオフィスから大型フロアまで、プノンペン主要ビジネスエリアの洗練された商業スペースをご提案します。', link:'スペースを探す →' }
+    ],
+    article_label: '記事', article_title: 'プノンペン<em>最新情報</em>', article_btn: '記事一覧を見る',
+    concept_label: '私たちの理念', concept_title: 'カンボジアへの投資 —<br><em>急成長する市場</em>',
+    concept_p1: 'アンナアドバイザーズは、投資家や居住者の皆様とカンボジアの優良不動産をつなぐ架け橋です。不動産とは単なる投資にとどまらず、ライフスタイル・快適さ・長期的な価値が交わる場所だと考えています。',
+    concept_p2: '高級住宅から高収益アセットまで、バイリンガルの専門スタッフが透明性の高いエンドツーエンドのサポートを提供。プノンペンの中心で、自信を持って投資・生活していただけます。',
+    stat1: ['2','拠点：東京・プノンペン'], stat2: ['100+','物件ポートフォリオ'], stat3: ['10+','年の実績'],
+    voices_label: 'お客様の声', voices_title: 'お客様の<em>ご意見</em>',
+    faq_label: 'よくある質問', faq_title: 'よくある<em>ご質問</em>',
+    access_label: 'お問い合わせ・アクセス', access_title: '事務所へ<em>お越しください</em>', access_btn: 'お問い合わせはこちら',
+    footer_tagline: '不動産投資・売買・賃貸',
+    footer_cols: ['サービス','会社情報','法的情報'],
+    footer_links: [['賃貸物件','投資物件','オフィス賃貸'],['CEOメッセージ','記事','よくある質問','お問い合わせ'],['プライバシーポリシー','利用規約']],
+  },
+  km: {
+    nav: ['សេវាកម្ម', 'អត្ថបទ', 'សារពី CEO', 'FAQ', 'ទំនាក់ទំនង'],
+    hero_tag: 'វិនិយោគអចលនទ្រព្យនៅកម្ពុជា',
+    hero_h1: 'ទុកចិត្តលើ<br><em>Anna Advisors</em>',
+    hero_p: 'ជាមួយការិយាល័យនៅតូក្យូ និងភ្នំពេញ យើងជំនាញលើការវិនិយោគ ការលក់ និងការជួលអចលនទ្រព្យ។',
+    hero_btn: 'ទាក់ទងយើងឥឡូវ',
+    service_label: 'សេវាកម្មរបស់យើង', service_title: '<em>សេវាកម្ម</em>ដែលយើងផ្តល់',
+    services: [
+      { num:'01', h:'ជួល<br>បន្ទប់', p:'អាផាតមិន និងខុនដូពិសេសក្នុងភ្នំពេញ សម្រាប់ជនបរទេស និងអ្នកមានសម្បត្តិ។', link:'មើលបញ្ជីទ្រព្យ →' },
+      { num:'02', h:'អចលនទ្រព្យ<br>វិនិយោគ', p:'អចលនទ្រព្យផ្តល់ប្រាក់ចំណេញខ្ពស់នៅភ្នំពេញ ពីខុនដូដល់អចលនទ្រព្យពាណិជ្ជកម្ម។', link:'មើលគម្រោង →' },
+      { num:'03', h:'ជួល<br>ការិយាល័យ', p:'លំហការិយាល័យទំនើបនៅតំបន់អាជីវកម្មសំខាន់ៗក្នុងភ្នំពេញ។', link:'រក​ទីតាំង →' }
+    ],
+    article_label: 'អត្ថបទ', article_title: '<em>ព័ត៌មាន</em>ភ្នំពេញ', article_btn: 'មើលអត្ថបទទាំងអស់',
+    concept_label: 'ទស្សនវិជ្ជារបស់យើង', concept_title: 'វិនិយោគនៅកម្ពុជា —<br><em>ទីផ្សារលូតលាស់លឿន</em>',
+    concept_p1: 'Anna Advisors ភ្ជាប់វិនិយោគិន និងអ្នករស់នៅជាមួយឱកាសអចលនទ្រព្យដ៏ល្អបំផុតនៅកម្ពុជា។',
+    concept_p2: 'ជំនាញការបីភាសារបស់យើងផ្តល់ការគាំទ្រពេញលេញ ពីការស្វែងរករហូតដល់ការចុះហត្ថលេខាលើកិច្ចសន្យា។',
+    stat1: ['2','ការិយាល័យ: តូក្យូ & ភ្នំពេញ'], stat2: ['100+','អចលនទ្រព្យ'], stat3: ['10+','ឆ្នាំនៃបទពិសោធ'],
+    voices_label: 'សំឡេងអតិថិជន', voices_title: '<em>មតិ</em>អតិថិជន',
+    faq_label: 'FAQ', faq_title: '<em>សំណួរ</em>ដែលសួរញឹកញាប់',
+    access_label: 'ទំនាក់ទំនង & ទីតាំង', access_title: 'មក<em>ការិយាល័យ</em>យើង', access_btn: 'ផ្ញើសំណួររបស់អ្នក',
+    footer_tagline: 'វិនិយោគ · លក់ · ជួល អចលនទ្រព្យ',
+    footer_cols: ['សេវាកម្ម','ក្រុមហ៊ុន','ច្បាប់'],
+    footer_links: [['ជួលបន្ទប់','អចលនទ្រព្យវិនិយោគ','ជួលការិយាល័យ'],['សារពី CEO','អត្ថបទ','FAQ','ទំនាក់ទំនង'],['គោលការណ៍ភាពឯកជន','លក្ខខណ្ឌប្រើប្រាស់']],
+  }
+};
+
+let currentLang = 'en';
+function setLang(lang) {
+  currentLang = lang;
+  const d = LANG_DATA[lang];
+  document.getElementById('html-root').lang = lang === 'ja' ? 'ja' : lang === 'km' ? 'km' : 'en';
+  const navLinks = document.querySelectorAll('.nav-links li a');
+  navLinks.forEach((a, i) => { if (d.nav[i]) a.textContent = d.nav[i]; });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active-lang', btn.dataset.lang === lang));
+  const ids = ['hero-tag','hero-h1','hero-p','service-label','service-title','article-label','article-title','article-btn','concept-label','concept-title','concept-p1','concept-p2','stat1-num','stat1-lbl','stat2-num','stat2-lbl','stat3-num','stat3-lbl','voices-label','voices-title','faq-label','faq-title','access-label','access-title','access-btn','footer-tagline'];
+  const vals = [d.hero_tag,d.hero_h1,d.hero_p,d.service_label,d.service_title,d.article_label,d.article_title,d.article_btn,d.concept_label,d.concept_title,d.concept_p1,d.concept_p2,d.stat1[0],d.stat1[1],d.stat2[0],d.stat2[1],d.stat3[0],d.stat3[1],d.voices_label,d.voices_title,d.faq_label,d.faq_title,d.access_label,d.access_title,d.access_btn,d.footer_tagline];
+  ids.forEach((id,i) => { const el=document.getElementById(id); if(el && vals[i]) el.innerHTML=vals[i]; });
+  d.services.forEach((s,i) => {
+    ['svc-h-','svc-p-','svc-link-'].forEach((pfx,j) => {
+      const el = document.getElementById(pfx+i);
+      if (el) el.innerHTML = [s.h, s.p, s.link][j];
+    });
+  });
+  ['footer-col-0','footer-col-1','footer-col-2'].forEach((id,ci) => {
+    const col = document.getElementById(id);
+    if (!col) return;
+    col.querySelector('h5').textContent = d.footer_cols[ci];
+    col.querySelectorAll('li a').forEach((a,li) => { if (d.footer_links[ci]?.[li]) a.textContent = d.footer_links[ci][li]; });
+  });
+  if (lang === 'km') {
+    document.body.style.fontFamily = "'Hanuman','Noto Sans Khmer','DM Sans',sans-serif";
+  } else { document.body.style.fontFamily = ''; }
+}
+function setInner(id,h){const el=document.getElementById(id);if(el)el.innerHTML=h;}
 </script>
 
 </body>
