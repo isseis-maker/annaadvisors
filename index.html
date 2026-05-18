@@ -6737,5 +6737,244 @@ function submitContactForm() {
   res.textContent='Thank you! Your message is ready — please send it from your email client.';
 }
 </script>
+<!-- Telegram Floating Contact Button -->
+<a href="https://t.me/annaadvisors" 
+   class="telegram-float" 
+   target="_blank" 
+   rel="noopener noreferrer">
+
+  <div class="telegram-icon">
+
+    <!-- Telegram SVG Icon -->
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M21.5 4.5L18.4 19.2C18.17 20.24 17.58 20.5 16.7 20.02L11.95 16.52L9.66 18.73C9.41 18.98 9.2 19.19 8.72 19.19L9.06 14.36L17.85 6.42C18.23 6.08 17.77 5.89 17.26 6.22L6.39 13.06L1.71 11.6C0.69 11.28 0.67 10.58 1.92 10.09L20.23 3.03C21.08 2.72 21.82 3.22 21.5 4.5Z"
+        fill="white"/>
+    </svg>
+
+  </div>
+
+  <div class="telegram-text">
+    Feel free to contact us (Telegram)
+  </div>
+
+  <span class="pulse"></span>
+</a>
+
+<style>
+
+/* ===== Floating Button ===== */
+
+.telegram-float{
+
+    position: fixed;
+
+    left: 50%;
+    bottom: 24px;
+
+    transform: translateX(-50%);
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 22px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+      135deg,
+      #229ED9,
+      #1b84b8
+    );
+
+    color: white;
+    text-decoration: none;
+
+    font-family:
+      "Inter",
+      "Noto Sans JP",
+      sans-serif;
+
+    font-weight: 700;
+    font-size: 15px;
+
+    box-shadow:
+      0 10px 30px rgba(34,158,217,0.35),
+      0 4px 12px rgba(0,0,0,0.15);
+
+    transition:
+      transform .25s ease,
+      box-shadow .25s ease,
+      opacity .25s ease;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+
+    animation: floatIn .8s ease;
+}
+
+
+/* Hover */
+
+.telegram-float:hover{
+
+    transform:
+      translateX(-50%)
+      translateY(-4px)
+      scale(1.02);
+
+    box-shadow:
+      0 14px 40px rgba(34,158,217,0.45),
+      0 8px 20px rgba(0,0,0,0.18);
+}
+
+
+/* Click */
+
+.telegram-float:active{
+
+    transform:
+      translateX(-50%)
+      scale(0.97);
+}
+
+
+/* Icon */
+
+.telegram-icon{
+
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.16);
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* SVG */
+
+.telegram-icon svg{
+
+    width: 22px;
+    height: 22px;
+
+    display: block;
+}
+
+
+/* Text */
+
+.telegram-text{
+
+    white-space: nowrap;
+
+    letter-spacing: 0.02em;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Pulse */
+
+.pulse{
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 999px;
+
+    border: 2px solid rgba(255,255,255,0.35);
+
+    animation: pulse 2.4s infinite;
+}
+
+
+/* Animations */
+
+@keyframes pulse{
+
+    0%{
+        transform: scale(1);
+        opacity: .7;
+    }
+
+    70%{
+        transform: scale(1.08);
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+
+@keyframes floatIn{
+
+    from{
+        opacity: 0;
+        transform:
+          translateX(-50%)
+          translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform:
+          translateX(-50%)
+          translateY(0);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px){
+
+    .telegram-float{
+
+        bottom: 16px;
+
+        padding: 12px 16px;
+
+        gap: 10px;
+    }
+
+    .telegram-text{
+
+        font-size: 13px;
+    }
+
+    .telegram-icon{
+
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+    }
+
+    .telegram-icon svg{
+
+        width: 18px;
+        height: 18px;
+    }
+}
+
+</style>
 </body>
 </html>
