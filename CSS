@@ -1,0 +1,121 @@
+/* ==========================================================================
+   ACCESSレイアウト最適化（1カラム・横幅いっぱい・レスポンシブ）
+   ========================================================================== */
+
+/* ベースコンテナ：PCで広がりすぎるのを防ぐ最重要設定 */
+.access-container {
+  width: 100%;
+  max-width: 1140px; /* 一般的な大画面PCで最も美しく見えるコンテナ幅 */
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* 白背景のカードスタイル（共通） */
+.access-card {
+  background: var(--white, #ffffff);
+  padding: 56px 64px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* 軽めのシャドウで高級感をプラス */
+}
+
+/* フォーム要素の共通設定 */
+.form-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: var(--light-bg);
+  font-family: var(--sans);
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+/* オフィスタイトル */
+.office-title {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding-bottom: 12px;
+  font-weight: 600;
+}
+
+/* --- グリッドシステム（PCデフォルト） --- */
+.form-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.office-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* ==========================================
+   メディアクエリ: タブレット（992px以下）
+   ========================================== */
+@media (max-width: 992px) {
+  .access-container {
+    padding: 0 24px;
+  }
+  .access-card {
+    padding: 40px 40px;
+  }
+  .form-grid-4 {
+    grid-template-columns: repeat(2, 1fr); /* 4列から2列×2行へ */
+    gap: 20px;
+  }
+  .office-grid {
+    grid-template-columns: 1fr; /* オフィス情報を縦並びに変更 */
+    gap: 36px;
+  }
+}
+
+/* ==========================================
+   メディアクエリ: スマートフォン（600px以下）
+   ========================================== */
+@media (max-width: 600px) {
+  .access-container {
+    padding: 0 16px;
+  }
+  .access-card {
+    padding: 32px 20px; /* スマホの画面幅に合わせて内側余白を狭める */
+  }
+  .form-grid-4, 
+  .form-grid-2, 
+  .map-grid {
+    grid-template-columns: 1fr; /* すべて1列の縦並びへ集約 */
+    gap: 20px;
+  }
+  .office-grid {
+    gap: 32px;
+  }
+}
