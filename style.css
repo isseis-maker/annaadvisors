@@ -1,20 +1,26 @@
 /* ==========================================================================
-   ACCESSレイアウト修正：強引な横並び（2カラム）を完全リセット
+   ACCESSレイアウト修正：強引な横並び（2カラム）を完全リセット（超強力版）
    ========================================================================== */
 
-/* 1. 外側のコンテナ幅をPCで一番美しく見える1140pxに固定 */
-.access-container {
+/* 1. 外側のコンテナ幅をPCで一番美しく見える1140pxに固定（中央寄せ） */
+#access .access-container {
   width: 100% !important;
   max-width: 1140px !important; 
   margin: 0 auto !important;
   padding: 0 40px !important;
   box-sizing: border-box !important;
+  display: block !important; /* 万が一ここが横並びになっていた場合のリセット */
 }
 
-/* 2. revealによる横並び（Flex/Grid）を解除し、縦並びに強制変更 */
+/* 2. 最重要：revealクラスによる左右2カラム（Flex/Grid）を完全に破壊してリセット */
 #access .reveal.access-card {
-  display: block !important; /* 横並びを解除して縦1列のブロックに */
+  display: block !important;       /* 強制的に縦1列のブロック要素にする */
+  float: none !important;          /* 古い横並び手法の解除 */
+  flex-direction: column !important; /* Flexboxだった場合の縦並び化 */
+  grid-template-columns: 1fr !important; /* Gridだった場合の縦並び化 */
+  
   width: 100% !important;
+  max-width: 100% !important;
   background: var(--white, #ffffff) !important;
   padding: 56px 64px !important;
   margin-bottom: 32px !important;
@@ -22,35 +28,40 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
-/* 3. フォーム内のグリッド（PC時は4列、スマホで1列） */
-.form-grid-4 {
+/* 3. フォーム内のグリッド（PC時は横に4つ綺麗に並ぶ） */
+#access .form-grid-4 {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
   gap: 24px !important;
+  width: 100% !important;
 }
 
-.form-grid-2 {
+/* 4. 問い合わせ種類・予算のグリッド（PC時は横に2つ並ぶ） */
+#access .form-grid-2 {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 24px !important;
+  width: 100% !important;
 }
 
-/* 4. オフィス情報のグリッド（PC時は3列） */
-.office-grid {
+/* 5. オフィス情報のグリッド（PC時は3列） */
+#access .office-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 48px !important;
+  width: 100% !important;
 }
 
-/* 5. マップのグリッド（PC時は2列） */
-.map-grid {
+/* 6. マップのグリッド（PC時は2列） */
+#access .map-grid {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 32px !important;
+  width: 100% !important;
 }
 
-/* 共通パーツのスタイリング */
-.form-label {
+/* 入力欄とラベルの見た目調整（共通） */
+#access .form-label {
   font-size: 11px !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
@@ -60,7 +71,7 @@
   font-weight: 600 !important;
 }
 
-.form-input {
+#access .form-input {
   width: 100% !important;
   padding: 14px 18px !important;
   border: 1px solid rgba(0,0,0,0.12) !important;
@@ -72,7 +83,7 @@
   transition: border-color 0.2s !important;
 }
 
-.office-title {
+#access .office-title {
   font-size: 11px !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
@@ -88,17 +99,17 @@
    メディアクエリ: タブレット（992px以下）
    ========================================== */
 @media (max-width: 992px) {
-  .access-container {
+  #access .access-container {
     padding: 0 24px !important;
   }
   #access .reveal.access-card {
     padding: 40px 40px !important;
   }
-  .form-grid-4 {
-    grid-template-columns: repeat(2, 1fr) !important; /* スマホ手前は2列 */
+  #access .form-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important; /* タブレットでは2列×2行 */
     gap: 20px !important;
   }
-  .office-grid {
+  #access .office-grid {
     grid-template-columns: 1fr !important; /* オフィス情報を縦並びに */
     gap: 36px !important;
   }
@@ -108,16 +119,16 @@
    メディアクエリ: スマートフォン（600px以下）
    ========================================== */
 @media (max-width: 600px) {
-  .access-container {
+  #access .access-container {
     padding: 0 16px !important;
   }
   #access .reveal.access-card {
     padding: 32px 20px !important;
   }
-  .form-grid-4, 
-  .form-grid-2, 
-  .map-grid {
-    grid-template-columns: 1fr !important; /* すべて1列に集約 */
+  #access .form-grid-4, 
+  #access .form-grid-2, 
+  #access .map-grid {
+    grid-template-columns: 1fr !important; /* スマホでは完全縦1列 */
     gap: 20px !important;
   }
 }
