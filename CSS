@@ -1,101 +1,106 @@
 /* ==========================================================================
-   ACCESSレイアウト最適化（1カラム・横幅いっぱい・レスポンシブ）
+   ACCESSレイアウト修正：強引な横並び（2カラム）を完全リセット
    ========================================================================== */
 
-/* ベースコンテナ：PCで広がりすぎるのを防ぐ最重要設定 */
+/* 1. 外側のコンテナ幅をPCで一番美しく見える1140pxに固定 */
 .access-container {
-  width: 100%;
-  max-width: 1140px; /* 一般的な大画面PCで最も美しく見えるコンテナ幅 */
-  margin: 0 auto;
-  padding: 0 40px;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 1140px !important; 
+  margin: 0 auto !important;
+  padding: 0 40px !important;
+  box-sizing: border-box !important;
 }
 
-/* 白背景のカードスタイル（共通） */
-.access-card {
-  background: var(--white, #ffffff);
-  padding: 56px 64px;
-  box-sizing: border-box;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* 軽めのシャドウで高級感をプラス */
+/* 2. revealによる横並び（Flex/Grid）を解除し、縦並びに強制変更 */
+#access .reveal.access-card {
+  display: block !important; /* 横並びを解除して縦1列のブロックに */
+  width: 100% !important;
+  background: var(--white, #ffffff) !important;
+  padding: 56px 64px !important;
+  margin-bottom: 32px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
-/* フォーム要素の共通設定 */
-.form-label {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gray);
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.form-input {
-  width: 100%;
-  padding: 14px 18px;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: var(--light-bg);
-  font-family: var(--sans);
-  font-size: 14px;
-  outline: none;
-  box-sizing: border-box;
-  transition: border-color 0.2s;
-}
-
-/* オフィスタイトル */
-.office-title {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  padding-bottom: 12px;
-  font-weight: 600;
-}
-
-/* --- グリッドシステム（PCデフォルト） --- */
+/* 3. フォーム内のグリッド（PC時は4列、スマホで1列） */
 .form-grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
 }
 
 .form-grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px !important;
 }
 
+/* 4. オフィス情報のグリッド（PC時は3列） */
 .office-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 48px !important;
 }
 
+/* 5. マップのグリッド（PC時は2列） */
 .map-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 32px !important;
 }
+
+/* 共通パーツのスタイリング */
+.form-label {
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--gray) !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-weight: 600 !important;
+}
+
+.form-input {
+  width: 100% !important;
+  padding: 14px 18px !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  background: var(--light-bg) !important;
+  font-family: var(--sans) !important;
+  font-size: 14px !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s !important;
+}
+
+.office-title {
+  font-size: 11px !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--gray) !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  padding-bottom: 12px !important;
+  font-weight: 600 !important;
+}
+
 
 /* ==========================================
    メディアクエリ: タブレット（992px以下）
    ========================================== */
 @media (max-width: 992px) {
   .access-container {
-    padding: 0 24px;
+    padding: 0 24px !important;
   }
-  .access-card {
-    padding: 40px 40px;
+  #access .reveal.access-card {
+    padding: 40px 40px !important;
   }
   .form-grid-4 {
-    grid-template-columns: repeat(2, 1fr); /* 4列から2列×2行へ */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr) !important; /* スマホ手前は2列 */
+    gap: 20px !important;
   }
   .office-grid {
-    grid-template-columns: 1fr; /* オフィス情報を縦並びに変更 */
-    gap: 36px;
+    grid-template-columns: 1fr !important; /* オフィス情報を縦並びに */
+    gap: 36px !important;
   }
 }
 
@@ -104,18 +109,15 @@
    ========================================== */
 @media (max-width: 600px) {
   .access-container {
-    padding: 0 16px;
+    padding: 0 16px !important;
   }
-  .access-card {
-    padding: 32px 20px; /* スマホの画面幅に合わせて内側余白を狭める */
+  #access .reveal.access-card {
+    padding: 32px 20px !important;
   }
   .form-grid-4, 
   .form-grid-2, 
   .map-grid {
-    grid-template-columns: 1fr; /* すべて1列の縦並びへ集約 */
-    gap: 20px;
-  }
-  .office-grid {
-    gap: 32px;
+    grid-template-columns: 1fr !important; /* すべて1列に集約 */
+    gap: 20px !important;
   }
 }
